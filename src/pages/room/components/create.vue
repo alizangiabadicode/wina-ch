@@ -16,7 +16,7 @@ import { ROOM_STATUS, RootModel } from '@models/Room';
 import { ref, useId } from 'vue';
 
 const show = defineModel();
-const options = Object.keys(ROOM_STATUS).map((k) => ({label: k, value: k }))
+const options = [({label: ROOM_STATUS.READY, value: ROOM_STATUS.READY })]
 
 function modelInitializer(){
   return {
