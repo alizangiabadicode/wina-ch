@@ -1,21 +1,24 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
 import RootPage from './pages/root/index.vue'
+import GuestPage from './pages/guest/index.vue'
 import RoomPage from './pages/room/index.vue'
 
 const routes = [
-  { path: '/', component: RootPage, 
+  { 
+    path: '/', 
+    component: RootPage, 
     children: [
       {
         path: 'room',
-        component: RoomPage
+        component: RoomPage,
       },
       {
         path: 'guest',
-        component: RoomPage
+        component: GuestPage
       },
       { 
-        path: '/:*',  // This matches any route
+        path: '/:catchAll(.*)',
         redirect: '/room'
       }
     ]
