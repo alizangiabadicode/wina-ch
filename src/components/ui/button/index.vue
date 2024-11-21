@@ -1,5 +1,5 @@
 <template>
-  <component :is="getComponent" class="button" v-bind="$attrs">
+  <component :to="to" :is="getComponent" class="button" v-bind="$attrs">
     <slot/>
   </component>
 </template>
@@ -8,7 +8,9 @@
 import { computed } from 'vue';
 
 interface IProps {
-  to: string;
+  to?: {
+    path: string
+  };
 }
 const props = defineProps<IProps>()
 
