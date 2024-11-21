@@ -1,25 +1,25 @@
 <template>
-  <div class="flex space-x-4">
+  <div class="flex space-x-3">
     <h1>
-    Rooms
-  </h1>
-  <Button @click="openCreateModal">
+      Guest
+    </h1>
+    <Button @click="openCreateModal">
     add new room
-  </Button>
-  </div>
+    </Button>
   <Create v-model="showCreateModal" />
-  <List />
+</div>
+<List />
+
 </template>
 
 <script setup lang="ts">
 import { Button } from '@components/ui';
-import List from './components/list.vue';
 import Create from './components/create.vue';
 import { ref } from 'vue';
+import List from './components/list.vue';
 
 const showCreateModal = ref(false)
 function openCreateModal() {
   showCreateModal.value = true;
 }
-
 </script>

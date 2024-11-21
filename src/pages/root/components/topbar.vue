@@ -1,9 +1,13 @@
 <template>
   <div class="card space-x-2.5">
-    <Button to="/rooms">
+    <Button :to="{
+      path: '/room'
+    }">
       rooms
     </Button>
-    <Button to="/guests">
+    <Button :to="{
+      path: '/guest'
+    }">
       guests
     </Button>
   </div>
